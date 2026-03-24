@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Pytest
+.pytest_cache/
+
+# Mypy
+.mypy_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node / frontend
+node_modules/
+.next/
+.nuxt/
+# OS
+Thumbs.db
+desktop.ini
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.crt
+id_rsa
+id_rsa.pub
+# Data and artifacts
+runs/
+tmp/
+tmp_pytorch/
+*.sqlite
+*.db
+*.csv
+*.xlsx
+*.xls

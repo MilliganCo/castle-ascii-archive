@@ -1,0 +1,191 @@
+{
+  "lanes": [
+    {
+      "id": 1,
+      "length": 90.0
+    },
+    {
+      "id": 2,
+      "length": 90.0
+    },
+    {
+      "id": 3,
+      "length": 90.0
+    }
+  ],
+  "base_hp": 1000.0,
+  "base_attack_range": 6.0,
+  "base_attack_damage": 15.0,
+  "base_attack_cooldown": 1.0,
+  "starting_gold": 80,
+  "starting_income_per_sec": 4.0,
+  "center_start_ratio": 0.4,
+  "center_end_ratio": 0.6,
+  "unit_templates": {
+    "infantry": {
+      "id": "infantry",
+      "name": "Infantry",
+      "max_hp": 160.0,
+      "damage": 12.0,
+      "attack_range": 1.0,
+      "attack_cooldown": 0.8,
+      "speed": 2.0,
+      "gold_cost": 10,
+      "role": "melee",
+      "vs_base_damage_multiplier": 1.0
+    },
+    "archer": {
+      "id": "archer",
+      "name": "Archer",
+      "max_hp": 80.0,
+      "damage": 10.0,
+      "attack_range": 3.5,
+      "attack_cooldown": 1.2,
+      "speed": 2.0,
+      "gold_cost": 12,
+      "role": "ranged",
+      "vs_base_damage_multiplier": 1.0
+    },
+    "mage": {
+      "id": "mage",
+      "name": "Mage",
+      "max_hp": 70.0,
+      "damage": 18.0,
+      "attack_range": 5.5,
+      "attack_cooldown": 1.6,
+      "speed": 1.8,
+      "gold_cost": 18,
+      "role": "mage",
+      "vs_base_damage_multiplier": 1.0
+    },
+    "siege": {
+      "id": "siege",
+      "name": "Siege Engine",
+      "max_hp": 240.0,
+      "damage": 20.0,
+      "attack_range": 2.5,
+      "attack_cooldown": 2.0,
+      "speed": 1.4,
+      "gold_cost": 35,
+      "role": "siege",
+      "vs_base_damage_multiplier": 2.0
+    }
+  },
+  "building_templates": {
+    "barracks": {
+      "id": "barracks",
+      "name": "Barracks",
+      "unit_template_id": "infantry",
+      "spawn_interval": 4.0,
+      "cost": 50,
+      "income_bonus_per_sec": 0.0
+    },
+    "archery_range": {
+      "id": "archery_range",
+      "name": "Archery Range",
+      "unit_template_id": "archer",
+      "spawn_interval": 5.0,
+      "cost": 70,
+      "income_bonus_per_sec": 0.0
+    },
+    "mage_tower": {
+      "id": "mage_tower",
+      "name": "Mage Tower",
+      "unit_template_id": "mage",
+      "spawn_interval": 6.0,
+      "cost": 90,
+      "income_bonus_per_sec": 0.0
+    },
+    "siege_workshop": {
+      "id": "siege_workshop",
+      "name": "Siege Workshop",
+      "unit_template_id": "siege",
+      "spawn_interval": 8.0,
+      "cost": 120,
+      "income_bonus_per_sec": 0.0
+    },
+    "gold_mine": {
+      "id": "gold_mine",
+      "name": "Gold Mine",
+      "unit_template_id": null,
+      "spawn_interval": null,
+      "cost": 80,
+      "income_bonus_per_sec": 3.0
+    }
+  },
+  "upgrade_templates": {
+    "income_1": {
+      "id": "income_1",
+      "name": "Improved Mining",
+      "description": "+2 gold/sec",
+      "cost": 100,
+      "max_level": 1,
+      "target_type": "player",
+      "target_id": null,
+      "research_time_base": 5.0,
+      "research_time_per_level": 2.0,
+      "effects": [
+        {
+          "stat": "income_per_sec",
+          "op": "add",
+          "value": 2.0
+        }
+      ]
+    },
+    "infantry_attack_1": {
+      "id": "infantry_attack_1",
+      "name": "Infantry Weapons I",
+      "description": "+20% infantry damage",
+      "cost": 80,
+      "max_level": 1,
+      "target_type": "unit",
+      "target_id": "infantry",
+      "research_time_base": 8.0,
+      "research_time_per_level": 3.0,
+      "effects": [
+        {
+          "stat": "damage",
+          "op": "mul",
+          "value": 1.2
+        }
+      ]
+    },
+    "infantry_hp_1": {
+      "id": "infantry_hp_1",
+      "name": "Infantry Armor I",
+      "description": "+20% infantry HP",
+      "cost": 80,
+      "max_level": 1,
+      "target_type": "unit",
+      "target_id": "infantry",
+      "research_time_base": 8.0,
+      "research_time_per_level": 3.0,
+      "effects": [
+        {
+          "stat": "max_hp",
+          "op": "mul",
+          "value": 1.2
+        }
+      ]
+    },
+    "barracks_training_1": {
+      "id": "barracks_training_1",
+      "name": "Barracks Training I",
+      "description": "-20% infantry spawn interval",
+      "cost": 90,
+      "max_level": 1,
+      "target_type": "building",
+      "target_id": "barracks",
+      "research_time_base": 7.0,
+      "research_time_per_level": 2.5,
+      "effects": [
+        {
+          "stat": "spawn_interval",
+          "op": "mul",
+          "value": 0.8
+        }
+      ]
+    }
+  }
+}
+
